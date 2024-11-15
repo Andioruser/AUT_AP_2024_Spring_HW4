@@ -5,6 +5,8 @@
 #include "message.h"
 #include "stl.h"
 #include "crypto.h"
+#include "TextMessage.h"
+#include "VoiceMessage.h"
 
 class Server {
 public:

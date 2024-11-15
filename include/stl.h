@@ -6,6 +6,8 @@
 #include <iostream>
 #include <map>
 #include <algorithm>
+#include <set>
+#include <numeric>
 
 void initial_vector_with_3_multiples(std::vector<int>& v, size_t size);
 

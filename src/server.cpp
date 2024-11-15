@@ -32,7 +32,13 @@ bool Server::create_message(Message* msg, std::string signature) {
         return false;
     }
     std::string public_key = public_keys[username];
-    bool authentic = crypto::verifySignature(public_key, "message", signature);
+    std::string message;
+    if(msg->get_type() == "text") {
+        message = static_cast<TextMessage*>(msg)->get_text();
+    } else {
+        //message = vector_to_string((static_cast<VoiceMessage*>(msg)->get_voice()),' ');
+    }
+    bool authentic = crypto::verifySignature(public_key, message, signature);
     if(authentic) {
         messages.push_back(msg);
     }
